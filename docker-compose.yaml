@@ -5,6 +5,5 @@ services:
     image: 'loadimpact/k6'
     volumes:
       - './sample.js:/tmp/sample.js'
-      - './report.json:/tmp/report.json'
       - './summary.html:/tmp/summary.html'
-    entrypoint: [k6, run, --out, json=/tmp/report.json, /tmp/sample.js]
+    entrypoint: [k6, run, /tmp/sample.js]

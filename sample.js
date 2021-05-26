@@ -20,10 +20,6 @@ export function users() {
 
 export function handleSummary(data) {
   console.log('Preparing the end-of-test summary...');
-  let resp = http.post('https://httpbin.test.k6.io/anything', JSON.stringify(data));
-    if (resp.status != 200) {
-        console.error('Could not send summary, got status ' + resp.status);
-    }
   return {
         'stdout': textSummary(data, { indent: ' ', enableColors: true}),
         '/tmp/summary.html': htmlReport(data), 
