@@ -1,0 +1,9 @@
+version: '3'
+services:
+  performance-test:
+    container_name: k6-performance
+    image: 'loadimpact/k6'
+    volumes:
+      - './sample.js:/tmp/sample.js'
+      - './report.json:/tmp/report.json'
+    entrypoint: [k6, run, --out, json=/tmp/report.json, /tmp/sample.js]
