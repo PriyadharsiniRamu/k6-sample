@@ -4,6 +4,6 @@ services:
     container_name: k6-performance
     image: 'loadimpact/k6'
     volumes:
-      - './sample.js:/tmp/sample.js'
-      - './summary.html:/tmp/summary.html'
+      - './k6-sample/sample.js:/tmp/sample.js'
+      - './k6-sample/summary.html:/tmp/summary.html'
     entrypoint: [k6, run, /tmp/sample.js]
