@@ -2,7 +2,7 @@ version: '3'
 services:
   performance-test:
     container_name: k6-performance
-    image: 'loadimpact/k6'
+    image: '${{BASE}}/k6'
     volumes:
       - './k6-sample/sample.js:/tmp/sample.js'
       - './k6-sample/summary.html:/tmp/summary.html'
